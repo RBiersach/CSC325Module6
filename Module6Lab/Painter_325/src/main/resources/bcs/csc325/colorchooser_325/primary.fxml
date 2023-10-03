@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane prefHeight="298.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bcs.csc325.colorchooser_325.PrimaryController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TitledPane animated="false" text="Drawing Color">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="98.0" prefWidth="102.0">
+                           <children>
+                              <RadioButton fx:id="blackRadioButton" mnemonicParsing="false" text="Black">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="colorToggleGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="redRadioButton" mnemonicParsing="false" text="Red" toggleGroup="$colorToggleGroup" />
+                              <RadioButton fx:id="greenRadioButton" mnemonicParsing="false" text="Green" toggleGroup="$colorToggleGroup" />
+                              <RadioButton fx:id="blueRadioButton" mnemonicParsing="false" text="Blue" toggleGroup="$colorToggleGroup" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Pen Size">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="-1.0">
+                           <children>
+                              <RadioButton fx:id="smallRadioButton" mnemonicParsing="false" text="Small">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="sizeToggleGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="mediumRadioButton" mnemonicParsing="false" text="Medium" toggleGroup="$sizeToggleGroup" />
+                              <RadioButton fx:id="largeRadioButton" mnemonicParsing="false" text="Large" toggleGroup="$sizeToggleGroup" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <Button fx:id="undoButton" mnemonicParsing="false" onAction="#undoButtonHandler" text="Undo" />
+            <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearButtonHandler" text="Clear" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <Pane fx:id="drawingAreaPane" onMouseDragged="#drawingAreaMouseDragged" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
